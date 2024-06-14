@@ -1,9 +1,16 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
+import React from "react";
+import {
+  Routes,
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   function check(mssg){
@@ -49,12 +56,20 @@ function App() {
   
 
   return (
-    <>
-      <Navbar title="Bloggy" about="About Bloggy" theme={theme} toggleTheme={toggleTheme} />
-      <Alert alert={alert}/>
-      <Form heading="Enter Your Text" theme={theme} showAlert={showAlert}/>
-      {/* ,<About></About> */}
-    </> 
+    
+      <Router>
+        <Navbar title="Bloggy" about="About Bloggy" theme={theme} toggleTheme={toggleTheme} />
+        <Alert alert={alert}/>
+          <div className='cont'>
+            <Routes>
+              <Route exact path='/' element={<Form heading="Enter Your Text" theme={theme} showAlert={showAlert}/>} />
+
+              <Route exact path='/about' element={<About />}>
+                {/* <About></About> */}
+              </Route>
+            </Routes>
+          </div>
+        </Router>
   );
 }
 

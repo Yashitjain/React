@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
+import {Link} from 'react-router-dom'
 export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme={props.theme} style={{backgroundColor:props.theme==="green"?"#10898d":""}}>
@@ -12,10 +12,10 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/"> <b>Home</b></a>
+                <Link className="nav-link active" aria-current="page" to="/"> <b>Home</b></Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/"><b>{props.about}</b></a>
+                <Link className="nav-link" to="/about"><b>{props.about}</b></Link>
               </li>
             </ul>
 
@@ -26,32 +26,7 @@ export default function Navbar(props) {
                 <input className="form-check-input mx-3" onClick={()=>props.toggleTheme("dark")} type="radio" name="exampleRadios" id="flexSwitchCheckDefault" />Dark Theme
                 <input className="form-check-input mx-3" onClick={()=>props.toggleTheme("light")} type="radio" name="exampleRadios" id="flexSwitchCheckDefault" />Light Theme
                 <input className="form-check-input mx-3" onClick={()=>props.toggleTheme("green")} type="radio" name="exampleRadios" id="flexSwitchCheckDefault" />Green Theme
-              
             </div>
-
-
-{/*change theme radio*/ }
-        {/* <div className='inline' style={{marginInline:"auto"}}>
-          <div class="form-check-inline">
-            <input class="form-check-input" onClick={props.toggleTheme("black")} type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
-            <label class="form-check-label" for="exampleRadios1" >
-              Black
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" onClick={props.toggleTheme("white")}  type="radio" name="exampleRadios" id="exampleRadios2" value="option2" />
-            <label class="form-check-label" for="exampleRadios2" >
-              White
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input"  onClick={props.toggleTheme("green")} type="radio" name="exampleRadios" id="exampleRadios3" value="option3"  />
-            <label class="form-check-label" for="exampleRadios3">
-              Green
-            </label>
-          </div>
-        </div>
-          </div> */}
           </div>
         </div>
       </nav>
