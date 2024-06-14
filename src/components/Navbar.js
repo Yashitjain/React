@@ -21,7 +21,7 @@ export default function Navbar(props) {
 
 {/* change light dark theme  */}
 
-            <div className="htmlfom-check form-switch" style={{width:"fit-content",marginRight:"auto"}}>
+            <div className="htmlfom-check form-switch" style={{width:"fit-content",marginRight:"2rem"}}>
               <label className="form-check-label mx-3" htmlFor="flexSwitchCheckDefault" ></label>
                 <input className="form-check-input mx-3" onClick={()=>props.toggleTheme("dark")} type="radio" name="exampleRadios" id="flexSwitchCheckDefault" />Dark Theme
                 <input className="form-check-input mx-3" onClick={()=>props.toggleTheme("light")} type="radio" name="exampleRadios" id="flexSwitchCheckDefault" />Light Theme

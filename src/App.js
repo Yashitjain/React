@@ -27,14 +27,17 @@ function App() {
     if(selectedTheme==="light"){
       document.body.style.backgroundColor="white"
       document.body.style.color="black"
+      document.title="Bloggy-light Mode"
       showAlert("white","success");
     }else if(selectedTheme==="dark"){
       document.body.style.backgroundColor="#3d3d3d"
       document.body.style.color="white"
+      document.title="Bloggy-dark Mode"
       showAlert("black","success");
     }else if(selectedTheme==="green"){
       document.body.style.backgroundColor="#032f3c"
       document.body.style.color="white"
+      document.title="Bloggy-green Mode"
       showAlert("green","success");
 
     }

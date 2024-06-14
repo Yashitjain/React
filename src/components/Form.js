@@ -60,7 +60,7 @@ export default function Form(props) {
         <h1 style={{margin:"2rem"}}>{props.heading}</h1>
           <div className="form-floating">
             <textarea className="form-control" value={text} onChange={handleText} placeholder="Leave a comment here" id="floatingTextarea" 
-            style={{height:"30vh",width:"60vw",margin:"auto",
+            style={{height:"30vh",width:"80vw",margin:"auto",
             fontSize:`${fontSize}rem`,resize:"none",backgroundClip:"text",
             color: props.theme==="light"?"black":"white"}}></textarea>
           </div>
