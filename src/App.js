@@ -1,12 +1,55 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
+import { useState } from 'react';
+import Alert from './components/Alert';
 // import About from './components/About';
+
 function App() {
+  function check(mssg){
+    console.log(mssg);
+  }
+  const[alert,setAlert] = useState(null);
+  const [theme,setTheme] = useState("light");
+
+  function showAlert(message,type){
+    setAlert({
+      msg:message,
+      type:type
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  }
+
+  function toggleTheme(selectedTheme){
+    console.log(theme)
+    if(selectedTheme==="light"){
+      document.body.style.backgroundColor="white"
+      document.body.style.color="black"
+      showAlert("white","success");
+    }else if(selectedTheme==="dark"){
+      document.body.style.backgroundColor="#3d3d3d"
+      document.body.style.color="white"
+      showAlert("black","success");
+    }else if(selectedTheme==="green"){
+      document.body.style.backgroundColor="#032f3c"
+      document.body.style.color="white"
+      showAlert("green","success");
+
+    }
+    setTheme(selectedTheme)
+
+
+  }
+
+  
+
   return (
     <>
-      <Navbar title="Bloggy" about="About Bloggy"/>
-      <Form heading="Enter Your Text"/>
+      <Navbar title="Bloggy" about="About Bloggy" theme={theme} toggleTheme={toggleTheme} />
+      <Alert alert={alert}/>
+      <Form heading="Enter Your Text" theme={theme} showAlert={showAlert}/>
       {/* ,<About></About> */}
     </> 
   );

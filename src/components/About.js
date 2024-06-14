@@ -11,7 +11,6 @@ export default function About() {
     const [themeButton,setThemeButton] = useState("light");
 
     function toggleTheme(){
-        console.log(theme);
         if(themeButton==="light"){
             setTheme({
                 color:"white",
