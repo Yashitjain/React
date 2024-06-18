@@ -46,7 +46,7 @@ export default function Form(props) {
   function handleFontSizeDecrease(){
     if(fontSize>=1)
     setFontSize(fontSize-1);
-    props.showAlert(`Font Size Increased To ${fontSize}`,"success");
+    props.showAlert(`Font Size Decreased To ${fontSize}`,"success");
 
   }
   function handleTextSapces(){
