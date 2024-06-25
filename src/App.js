@@ -59,7 +59,7 @@ function App() {
         <Alert alert={alert}/>
         <Form heading="Enter Your Text" theme={theme} showAlert={showAlert}/>
       </>
-      // <Router>
+      // <Router> // 
         // <Navbar title="Text Editor" about="About Text Editor" theme={theme} toggleTheme={toggleTheme} />
         // <Alert alert={alert}/>
           // <div className='cont'>
