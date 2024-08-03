@@ -61,8 +61,8 @@ export default function Form(props) {
           <div className="form-floating">
             <textarea className="form-control" value={text} onChange={handleText} placeholder="Leave a comment here" id="floatingTextarea" 
             style={{height:"30vh",width:"80vw",margin:"auto",
-            fontSize:`${fontSize}rem`,resize:"none",backgroundClip:"text",
-            color: props.theme==="black",}}></textarea>
+            fontSize:`${fontSize}rem`,resize:"none",backgroundColor:"transparent",
+            color: props.theme=='light'?"black":"white",}}></textarea>
           </div>
               <button  className="btn btn-primary mt-4 mx-3" onClick={handleTextUpperCase}>To Uppercase</button>
               <button  className="btn btn-primary mt-4 mx-3" onClick={handleTextLowerCase}>To Lowercase</button>
